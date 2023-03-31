@@ -10,13 +10,15 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const email = form.elements.email.value;
   const password = form.elements.password.value;
+
   if (email === "" || password === "") {
     alert("Все поля должны быть заполнены!!!");
+  } else {
+    const formData = {
+      email,
+      password,
+    };
+    console.log(formData);
+    form.reset();
   }
-  const formData = {
-    email,
-    password,
-  };
-  console.log(formData);
-  form.reset();
 });
